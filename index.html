@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#87CEEB">
+    <meta name="description" content="Uma página especial criada com amor">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Página Especial">
+    <link rel="apple-touch-icon" href="assets/icon-192x192.png">
+    <link rel="manifest" href="manifest.json">
+    <title>EXCLUSIVO para ela.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <button class="food-button">🐟</button>
+
+    <h1 id="page-title">Minha princesa 👑</h1> 
+
+    <div class="container">
+        <button id="reveal-btn">Clique aqui!</button>
+    </div>
+
+    <div id="photo-container" style="display: none;">
+        <img id="photo" src="imagem.jpg" alt="Surpresa" style="cursor: pointer;">
+    </div>
+
+    <div id="spotify-link" style="display: none;">
+        <a href="https://www.spotify.com" target="_blank"></a>
+    </div>
+
+    <div id="footer" style="display: none;">
+        <p id="text-below-photo">Quer saber quanto tempo faz que te dedico meus "Eu te amo" para você? Então:</p>
+        <div id="countdown"></div> <!-- Aqui vai o contador -->
+        <div id="footer-container">
+            <p id="text-below-countdown">
+                Enfrentamos muitas coisas durante esse tempo que passamos juntos, depois de muito tempo conseguimos finalmente nos ver aos finais de semana.
+                Sabemos que brigas são normais e que não podemos deixar isso abalar nosso relacionamento.
+                Apesar de todo atrito que tivemos, temos e vamos ter, EU TE AMO, é um amor que realmente é sem explicação, é um amor tão imenso que estando com você horas parecem segundos.
+            </p>
+        </div>
+    </div>
+
+    <div id="hearts"></div>
+
+    <script src="theme.js"></script>
+    <script src="clouds.js"></script>
+    <script src="script.js"></script>
+    <script src="stars.js"></script>
+    <script src="oneko.js"></script>
+    <script src="food.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registrado com sucesso:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('Falha ao registrar o ServiceWorker:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
